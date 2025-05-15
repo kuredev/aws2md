@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+begin
+  require "aws2md"
+rescue LoadError
+  $LOAD_PATH.unshift(File.expand_path("../../lib", __FILE__))
+  require "aws2md"
+end
+
+Aws2MD::CLI.new.run
